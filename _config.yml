@@ -25,6 +25,7 @@ exclude:
   - Gemfile.lock
   - README.md
   - .gitignore
+  - editor/
 
 defaults:
   - scope:

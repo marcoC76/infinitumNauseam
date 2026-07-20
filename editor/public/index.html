@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor · BlogRelatos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="topbar">
+    <div class="topbar-left">
+      <span class="topbar-title">📝 BlogRelatos · Editor</span>
+      <span class="topbar-status" id="status">listo</span>
+    </div>
+    <div class="topbar-right">
+      <button class="btn" id="btn-new" title="Nuevo post">✚ Nuevo</button>
+      <button class="btn btn-primary" id="btn-save" title="Guardar (Ctrl+S)">💾 Guardar</button>
+      <button class="btn" id="btn-delete" title="Eliminar post">🗑 Eliminar</button>
+    </div>
+  </header>
+
+  <div id="app">
+    <aside id="sidebar">
+      <div class="sidebar-header">Posts</div>
+      <div id="post-list"></div>
+    </aside>
+
+    <main id="editor">
+      <div id="metadata-bar">
+        <div class="meta-row">
+          <label class="meta-label">Título</label>
+          <input type="text" id="meta-title" class="meta-input meta-input-wide" placeholder="Título del relato">
+        </div>
+        <div class="meta-row">
+          <label class="meta-label">Fecha</label>
+          <input type="date" id="meta-date" class="meta-input">
+          <label class="meta-label meta-label-offset">Categorías</label>
+          <input type="text" id="meta-categories" class="meta-input meta-input-med" placeholder="terror, ciencia ficcion">
+          <label class="meta-label meta-label-offset">Lectura</label>
+          <input type="number" id="meta-reading-time" class="meta-input meta-input-sm" min="1" value="5">
+          <span class="meta-unit">min</span>
+        </div>
+      </div>
+
+      <div id="editor-panels">
+        <div class="panel panel-editor">
+          <div class="panel-header">Editor</div>
+          <textarea id="editor-textarea" spellcheck="true" placeholder="Escribe tu relato en Markdown..."></textarea>
+        </div>
+        <div class="panel panel-preview">
+          <div class="panel-header">Vista previa</div>
+          <div id="preview-content"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="modal-overlay" class="hidden">
+    <div id="modal">
+      <div class="modal-header">Nuevo relato</div>
+      <div class="modal-body">
+        <label class="meta-label">Título</label>
+        <input type="text" id="modal-title" class="meta-input meta-input-wide" placeholder="Título del relato">
+        <label class="meta-label">Fecha</label>
+        <input type="date" id="modal-date" class="meta-input">
+        <label class="meta-label">Categorías</label>
+        <input type="text" id="modal-categories" class="meta-input meta-input-wide" placeholder="terror, ciencia ficcion">
+        <label class="meta-label">Tiempo de lectura</label>
+        <input type="number" id="modal-reading-time" class="meta-input" min="1" value="5">
+      </div>
+      <div class="modal-footer">
+        <button class="btn" id="modal-cancel">Cancelar</button>
+        <button class="btn btn-primary" id="modal-confirm">Crear</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@15.0.4/marked.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
