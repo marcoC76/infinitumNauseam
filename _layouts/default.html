@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+  {% include head.html %}
+  <body>
+    <div class="noise-overlay"></div>
+    <div class="scanlines"></div>
+    <div class="wrapper">
+      {% include header.html %}
+      <main class="content">
+        {{ content }}
+      </main>
+      {% include footer.html %}
+    </div>
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  </body>
+</html>

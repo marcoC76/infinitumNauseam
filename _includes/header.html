@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="header-content">
+    <a href="{{ '/' | relative_url }}" class="site-title" id="siteTitle">
+      <span class="prompt">></span>
+      <span class="title-text">infinitumNauseam</span>
+      <span class="cursor-blink">_</span>
+    </a>
+    <nav class="site-nav">
+      <a href="{{ '/' | relative_url }}" class="nav-link">[Inicio]</a>
+      <a href="{{ '/about' | relative_url }}" class="nav-link">[Sobre]</a>
+      <a href="{{ '/archivo' | relative_url }}" class="nav-link">[Archivo]</a>
+    </nav>
+  </div>
+  <div class="terminal-line">
+    <span class="terminal-status">SISTEMA_INICIALIZADO</span>
+    <span class="terminal-time">{{ site.time | date: "%H:%M:%S" }}</span>
+  </div>
+</header>

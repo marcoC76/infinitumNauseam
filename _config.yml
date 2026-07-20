@@ -1,0 +1,35 @@
+title: infinitumNauseam
+description: Relatos del abismo — terror, misterio y ciencia ficción
+url: "https://marcoc76.github.io"
+baseurl: "/infinitumNauseam"
+
+author:
+  name: Marco Antonio
+  email: marco.perez.cetis76@gmail.com
+
+permalink: /:categories/:title/
+paginate: 5
+paginate_path: "/page/:num/"
+
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .gitignore
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Marco Antonio"
